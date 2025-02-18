@@ -1,0 +1,32 @@
+items:
+    -
+        title: 'Nastavení cookies'
+        type: page
+        code: ''
+        reference: '3'
+        cmsPage: page
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: GDPR
+        type: page
+        code: ''
+        reference: '4'
+        cmsPage: page
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Prohlášení o přístupnosti'
+        type: page
+        code: ''
+        reference: '5'
+        cmsPage: page
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Links

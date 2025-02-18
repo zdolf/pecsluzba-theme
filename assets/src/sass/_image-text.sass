@@ -1,0 +1,13 @@
+.image-text
+    &__img
+        border-radius: $image-text-image-border-radius
+
+        @include media-breakpoint-up(lg)
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+
+        &--switched
+            @include media-breakpoint-up(lg)
+                border-radius: $image-text-image-border-radius
+                border-top-right-radius: 0
+                border-bottom-right-radius: 0

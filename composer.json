@@ -1,0 +1,8 @@
+{
+    "name": "humlnetcreative/web-theme",
+    "type": "october-theme",
+    "description": "Web skeleton theme.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

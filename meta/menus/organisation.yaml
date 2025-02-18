@@ -1,0 +1,22 @@
+items:
+    -
+        title: 'Veřejný závazek'
+        type: page
+        code: ''
+        reference: '7'
+        cmsPage: page
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Realizované projekty'
+        type: page
+        code: ''
+        reference: '8'
+        cmsPage: page
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Organizace
