@@ -1,9 +1,9 @@
 name: 'Web skeleton theme'
 description: 'Web skeleton theme.'
-author: 'Humlnet Creative'
+author: 'Zdolf'
 homepage: ''
-authorCode: HumlnetCreative
-code: web
+authorCode: zdolf
+code: pecsluzba
 parent: ''
 database: '0'
 require:
