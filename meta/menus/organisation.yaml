@@ -1,19 +1,35 @@
 items:
     -
         title: 'Veřejný závazek'
+        nesting: null
         type: page
+        url: null
         code: ''
         reference: '7'
         cmsPage: page
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Realizované projekty'
+        nesting: null
         type: page
+        url: null
         code: ''
         reference: '8'
+        cmsPage: page
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Výroční zprávy'
+        type: page
+        code: ''
+        reference: '6'
         cmsPage: page
         viewBag:
             isHidden: '0'

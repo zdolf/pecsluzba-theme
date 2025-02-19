@@ -26,6 +26,23 @@
                                 </p>
                             {% endif %}
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-white border-opacity-25 mt-sm-0 pt-sm-0">
+                        <h3 class="heading mb-0">
+                            Kontaktní údaje
+                        </h3>
+
+                        <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
+                            <i class="ph ph-caret-up"></i>
+                        </a>
+                    </div>
+
+                    <div class="collapse" id="footer-2">
+                        <div class="pt-4">
                             {% if this.theme.phone or this.theme.email %}
                                 <p class="mb-0 d-flex flex-column">
                                     {% if this.theme.phone %}
@@ -101,26 +118,7 @@
                                     {% endif %}
                                 </p>
                             {% endif %}
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-white border-opacity-25 mt-sm-0 pt-sm-0">
-                        <h3 class="heading mb-0">
-                            Organizace
-                        </h3>
-
-                        <a href="#footer-2" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
-                            <i class="ph ph-caret-up"></i>
-                        </a>
-                    </div>
-
-                    <div class="collapse" id="footer-2">
-                        <div class="pt-4">
-                            {{ footermenu.resetMenu("footermenu") }}
-
-                            {% component "footermenu" code="organisation" %}
                         </div>
                     </div>
                 </div>
@@ -128,7 +126,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center mt-4 pt-4 border-top border-1 border-light border-opacity-25 mt-md-0 pt-md-0">
                         <h3 class="heading mb-0">
-                            Dokumenty
+                            O organizaci
                         </h3>
 
                         <a href="#footer-3" data-bs-toggle="collapse" class="toggler collapsed text-decoration-none d-sm-none">
@@ -140,7 +138,7 @@
                         <div class="pt-4">
                             {{ footermenu.resetMenu("footermenu") }}
 
-                            {% component "footermenu" code="documents" %}
+                            {% component "footermenu" code="organisation" %}
                         </div>
                     </div>
                 </div>
