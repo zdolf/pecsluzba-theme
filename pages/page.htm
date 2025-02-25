@@ -28,41 +28,32 @@ categoryPage = "page"
 postPage = "page-post"
 
 [Files files]
-order = "position asc"
+order = "sort_order asc"
 
 [pricelist]
 
 [openinghours]
+
+[contactForm contactform]
 ==
 <?php
 function onEnd()
 {
     $code = $this["page"]->menu;
-    $contents = $this["page"]->contents;
 
-    $this["sidebarmenu"]->resetMenu($code);
-
-    if (!is_null($contents)) {
-        foreach ($contents as $content) {
-            if ($content->type == "blog") {
-                $posts = $this->page->components["posts"];
-                $posts->setProperty("categoryFilter", $content->blog_category);
-                $posts->onRun();
-            }
-        }
-    }
+$this["sidebarmenu"]->resetMenu($code);
 }
 ?>
 ==
-{#<div class="container-fluid" id="breadcrumb">#}
-{#    <div class="container-lg">#}
-{#        <div class="row g-5">#}
-{#            <div class="col {% if sidebarmenu.menuItems is not null %}col-xl-9 offset-xl-3{% endif %}">#}
-{#                {% component "breadcrumbs" %}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
+<div class="container-fluid" id="breadcrumb">
+    <div class="container-lg">
+        <div class="row g-5">
+            <div class="col {% if sidebarmenu.menuItems is not null %}col-xl-9 offset-xl-3{% endif %}">
+                {% component "breadcrumbs" %}
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid py-5 border-1 border-bottom border-light" id="page">
     <div class="container-lg">
@@ -81,7 +72,7 @@ function onEnd()
                 <div class="d-flex flex-column gap-5">
                     {% for content in page.contents %}
                         <div class="{{ content.type|slug }} {{ content.type|slug }}--{{ content.title|slug }}">
-                            {% if content.heading %}
+                            {% if content.heading and content.type != "image_text" %}
                                 <h2 class="mb-4">
                                     {{ content.heading }}
                                 </h2>
@@ -92,9 +83,7 @@ function onEnd()
                             {% elseif content.type == "image_text" %}
                                 {% partial "_block/image-text.htm" image=content.image text=content.text heading=content.heading switched=content.switch_order %}
                             {% elseif content.type == "blog" %}
-                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 {% if leftmenu.menuItems is null %}row-cols-xl-4{% endif %} g-4">
-                                    {% component "posts" %}
-                                </div>
+                                {% component "posts" categoryFilter=content.blog_category.slug rowCols=content.row_cols partial=content.partial %}
                             {% elseif content.type == "gallery" %}
                                 {% component "gallery" gallery=content.gallery.slug %}
                             {% elseif content.type == "files" %}

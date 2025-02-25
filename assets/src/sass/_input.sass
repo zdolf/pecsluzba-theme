@@ -1,0 +1,40 @@
+.input
+    &__icon
+        position: relative
+
+        &:before
+            font-family: $font-family-icons
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: $grid-gutter-width / 2
+            padding-left: $input-padding-x
+            font-size: $input-font-size-lg
+
+        &--name
+            &:before
+                content: "\E4C2"
+
+        &--email
+            &:before
+                content: "\E218"
+
+        &--phone
+            &:before
+                content: "\E3B8"
+
+        &--text
+            &:before
+                content: "\E3B4"
+                top: 13px
+                transform: none
+
+    &__icon-input
+        padding-left: 45px
+
+        &--textarea
+            height: 200px
+
+        &--button
+            &:after
+                content: none !important

@@ -1,15 +1,15 @@
-<div class="post post-card">
-    <a href="{{ link ?: item.url }}" class="position-relative d-flex flex-column gap-3">
+<div class="post">
+    <a href="{{ link ?: item.url }}" class="post__link position-relative d-flex flex-column gap-3">
         {% if image %}
-            <p class="img mb-0 position-relative overflow-hidden">
+            <p class="post__img mb-0 position-relative overflow-hidden">
                 {% if image.path %}
                     <img src="{{ image.thumb(600, 400, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-100">
                 {% else %}
                     <img src="{{ image|media }}" alt="{{ image.description }}" class="img-fluid w-100">
                 {% endif %}
 
-                <span class="overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                    <i class="ph ph-arrow-circle-up-right icon"></i>
+                <span class="post__overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                    <i class="ph ph-arrow-circle-up-right post__icon"></i>
                 </span>
             </p>
         {% endif %}
@@ -20,7 +20,7 @@
     {#        {{ post.published_at|date("j. n. Y") }}#}
     {#    </p>#}
 
-        <h3 class="title mb-0">
+        <h3 class="post__title mb-0">
             {{ item.title }}
         </h3>
 

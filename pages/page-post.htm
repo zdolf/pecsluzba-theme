@@ -1,0 +1,44 @@
+url = "/:fullslug*/d/:slug"
+layout = "default"
+title = "Post"
+seoOptionsMetaTitle = "{{ job ? job.title : (post ? post.title) }} | {{ page.title }}"
+
+[section job]
+handle = "Jobs\Job"
+identifier = "slug"
+value = "{{ :slug }}"
+
+[breadcrumbs]
+pageCode = "page"
+
+[page]
+column = "fullslug"
+value = "{{ :fullslug }}"
+==
+<div class="container-fluid" id="breadcrumb">
+    <div class="container-lg">
+        <div class="row g-5">
+            <div class="col">
+                {% component "breadcrumbs" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5 border-1 border-bottom border-light" id="page-post">
+    <div class="container-lg">
+        {% set job_post_partial = null %}
+
+        {% for content in page.contents %}
+            {% if content.type == "jobs" %}
+                {% set job_post_partial = content.post_partial %}
+            {% endif %}
+        {% endfor %}
+
+        {% if job %}
+            {% partial job_post_partial post=job %}
+        {% elseif post %}
+            {% partial "_post/default" %}
+        {% endif %}
+    </div>
+</div>

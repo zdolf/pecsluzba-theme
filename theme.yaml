@@ -12,6 +12,7 @@ require:
     - rainlab.blog
     - rainlab.translate
     - janvince.smallgdpr
+    - janvince.smallcontactform
     - lzaplata.gallery
     - lzaplata.files
     - lzaplata.extensions

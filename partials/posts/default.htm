@@ -12,19 +12,29 @@
 </div>
 
 {% if posts.lastPage > 1 %}
-    <ul class="pagination">
+    <ul class="pagination mt-5 mb-0 d-flex justify-content-center">
         {% if posts.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage-1) }) }}" class="page-link">
+                    <i class="ph ph-arrow-left"></i>
+                </a>
+            </li>
         {% endif %}
 
         {% for page in 1..posts.lastPage %}
-            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}">{{ page }}</a>
+            <li class="page-item {{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}" class="page-link">
+                    {{ page }}
+                </a>
             </li>
         {% endfor %}
 
         {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (posts.currentPage+1) }) }}" class="page-link">
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+            </li>
         {% endif %}
     </ul>
 {% endif %}

@@ -254,13 +254,12 @@ $footer-heading-color:                  $white;
 $footer-heading-font-weight:            $font-weight-medium;
 $footer-heading-font-size:              $h3-font-size;
 
-$post-card-image-overlay-bg:                rgba($white, .5);
-$post-card-image-overlay-icon-font-size:    3rem;
-$post-card-title-font-size:                 $h3-font-size;
-$post-card-title-font-weight:               $font-weight-medium;
-$post-card-title-underline-color:           transparent;
-$post-card-hover-title-underline-color:     $primary;
-
+$post-image-overlay-bg:                rgba($white, .5);
+$post-image-overlay-icon-font-size:    3rem;
+$post-title-font-size:                 $h3-font-size;
+$post-title-font-weight:               $font-weight-medium;
+$post-title-underline-color:           transparent;
+$post-hover-title-underline-color:     $primary;
 $post-font-weight-bold:                 $font-weight-bold;
 
 $map-card-header-bg:                    $white;
@@ -387,6 +386,9 @@ $icon-link-hover-color:                 $primary;
 $icon-light-link-color:                 $gray-500;
 $icon-light-link-hover-color:           $icon-link-hover-color;
 
+$input-padding-x:                       map-get($spacers, 3);
+$input-padding-y:                       map-get($spacers, 3);
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/variables-dark";
@@ -418,6 +420,7 @@ $icon-light-link-hover-color:           $icon-link-hover-color;
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/alert";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
